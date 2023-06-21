@@ -1,14 +1,15 @@
 import Vue from 'vue'
-// import uView from 'uview-ui'
+import uView from 'uview-ui'
 import Store from './store'
 import Config from './config'
 import App from './App'
-// 不再需要导入 uno.css
-// import 'uno.css'
-
 /* 全局组件引入 Start */
-
 /* 全局组件引入 End */
+
+Vue.use(uView)
+
+/* 全局组件挂载 Start */
+/* 全局组件挂载 End */
 
 /**
  * @description: 全局 Msg
@@ -123,12 +124,6 @@ const PreviewImage = (index, data, type = '') => {
     urls: newImage,
   })
 }
-
-// Vue.use(uView)
-
-/* 全局组件挂载 Start */
-
-/* 全局组件挂载 End */
 
 Vue.prototype.$store = Store
 Vue.prototype.$to = { NavTo, NavTab, NavBack }

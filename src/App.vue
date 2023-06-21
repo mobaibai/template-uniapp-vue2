@@ -1,18 +1,20 @@
 <script>
 export default {
   onLaunch() {
-    console.log('App Launch')
+    console.log("App Launch")
   },
   onShow() {
-    console.log('App Show')
+    console.log("App Show")
   },
   onHide() {
-    console.log('App Hide')
+    console.log("App Hide")
   },
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "uview-ui/index.scss";
+
 .uno-start {
   --un: 0;
 }
@@ -21,9 +23,11 @@ export default {
   --un: 0;
 }
 
-view,:before,:after {
+view,
+:before,
+:after {
   border-width: 0;
   border-style: solid;
-  border-color: #e5e7eb
+  border-color: #e5e7eb;
 }
 </style>

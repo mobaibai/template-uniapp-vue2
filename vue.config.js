@@ -9,4 +9,5 @@ module.exports = {
       UnoCSS(),
     ],
   },
+  transpileDependencies: ['uview-ui']
 }
