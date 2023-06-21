@@ -4,7 +4,13 @@
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "unocss-preset-weapp"
+        "navigationBarTitleText": "Home"
+      }
+    },
+    {
+      "path": "pages/examples/index",
+      "style": {
+        "navigationBarTitleText": "examples"
       }
     },
     {

@@ -1,9 +1,9 @@
 {
-  "name": "uniapp_vue2",
+  "name": "template-uniapp-vue2-unocss",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "npm run dev:h5",
+    "dev": "npm run dev:h5",
     "build": "npm run build:h5",
     "build:app-plus": "cross-env NODE_ENV=production UNI_PLATFORM=app-plus vue-cli-service uni-build",
     "build:custom": "cross-env NODE_ENV=production uniapp-cli custom",
@@ -70,6 +70,7 @@
     "core-js": "^3.26.1",
     "flyio": "^0.6.14",
     "regenerator-runtime": "^0.13.11",
+    "uview-ui": "^2.0.36",
     "vue": "^2.6.11",
     "vuex": "^3.2.0"
   },
@@ -94,6 +95,7 @@
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
+    "sass": "^1.63.5",
     "unocss-preset-weapp": "^0.53.1",
     "unocss-webpack-uniapp2": "^0.2.0",
     "vue-template-compiler": "^2.6.11"
