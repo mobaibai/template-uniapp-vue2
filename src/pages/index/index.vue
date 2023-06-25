@@ -1,5 +1,5 @@
 <template>
-  <view class="container index-container h-screen bg-gray-100 flex justify-center">
+  <view class="container index-container flex justify-center">
     <view class="example-button mt-20">
       <u-button type="primary" @click="$to.NavTo({ url: '/pages/examples/index' })">查看示例</u-button>
     </view>
