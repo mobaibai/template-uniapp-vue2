@@ -103,12 +103,36 @@
       }
     }
   ],
+
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#306ef5",
+    "borderStyle": "black",
+    "backgroundColor": "white",
+    "description": "TabBarItem颜色: 原色(#515151), 高亮色(#306ef5)",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tab-home.png",
+        "selectedIconPath": "static/tab-home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/examples/index",
+        "iconPath": "static/tab-examples.png",
+        "selectedIconPath": "static/tab-examples-active.png",
+        "text": "栗子"
+      }
+    ]
+  },
+
   "globalStyle": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
+    "navigationBarTitleText": "App",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
+
   "easycom": {
     "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
   }
