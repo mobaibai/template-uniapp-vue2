@@ -3,6 +3,7 @@ import uView from 'uview-ui'
 import Store from './store'
 import Config from './config'
 import App from './App'
+
 /* 全局组件引入 Start */
 /* 全局组件引入 End */
 
