@@ -127,7 +127,7 @@ const PreviewImage = (index, data, type = '') => {
 }
 
 Vue.prototype.$store = Store
-Vue.prototype.$to = { NavTo, NavTab, NavBack }
+Vue.prototype.$nav = { NavTo, NavTab, NavBack }
 Vue.prototype.$utils = { Msg, Modal, NavTo, NavTab, NavBack, PrevPage, PreviewImage }
 Vue.prototype.$config = { API_BASE_URL: Config.API_BASE_URL }
 
