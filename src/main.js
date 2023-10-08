@@ -40,7 +40,7 @@ const Msg = (title, duration = 2000, mask = false, icon = 'none') => {
  * @param {type} callback 是否显示取消按钮
  * @return {type}
  */
-const Modal = ({ title = '提示', content = '这是一个模态弹窗', cancel = true }, callback = () => { }) => {
+const Modal = ({ title = '提示', content = '这是一个模态弹窗', cancel = true }, callback = () => {}) => {
   uni.showModal({
     title,
     content,
@@ -49,6 +49,15 @@ const Modal = ({ title = '提示', content = '这是一个模态弹窗', cancel 
       callback(res)
     }
   })
+}
+
+/**
+ * @description: 重定向到页面、
+ * @param {type} config
+ * @return {type}
+ */
+const RediTo = config => {
+  uni.redirectTo(config)
 }
 
 /**
@@ -81,10 +90,9 @@ const NavBack = config => {
   const pages = getCurrentPages()
   const prevPage = pages[pages.length - 2]
   if (!prevPage) {
-    Msg('上一页走丢了，返回首页...')
     setTimeout(() => {
       NavTab({ url: '/pages/index/index' })
-    }, 1200);
+    }, 1000)
   } else {
     uni.navigateBack(config)
   }
@@ -113,7 +121,7 @@ const PrevPage = () => {
 const PreviewImage = (index, data, type = '') => {
   let newImage = []
   if (type === 'list') {
-    newImage = data.map((item) => {
+    newImage = data.map(item => {
       return ResourcePrefixCheck(item)
     })
   } else {
@@ -122,19 +130,46 @@ const PreviewImage = (index, data, type = '') => {
 
   uni.previewImage({
     current: index,
-    urls: newImage,
+    urls: newImage
   })
 }
 
+/**
+ * @description: 手机号正则
+ * @param {type} phone
+ * @return {type}
+ */
+const PhoneReg = phone => {
+  return /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/.test(phone)
+}
+
+/**
+ * @description: 身份证号正则
+ * @param {type} idCard
+ * @return {type}
+ */
+const IdCardReg = idCard => {
+  return /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/.test(idCard)
+}
+
+/**
+ * @description: 邮箱正则
+ * @param {type} email
+ * @return {type}
+ */
+const EmailReg = email => {
+  return /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/.test(email)
+}
+
 Vue.prototype.$store = Store
-Vue.prototype.$nav = { NavTo, NavTab, NavBack }
-Vue.prototype.$utils = { Msg, Modal, NavTo, NavTab, NavBack, PrevPage, PreviewImage }
+Vue.prototype.$nav = { NavTo, NavTab, RediTo, NavBack }
+Vue.prototype.$utils = { Msg, Modal, NavTo, NavTab, NavBack, PrevPage, PreviewImage, PhoneReg, IdCardReg, EmailReg }
 Vue.prototype.$config = { API_BASE_URL: Config.API_BASE_URL }
 
 Vue.config.productionTip = false
 App.mpType = 'app'
 
 const app = new Vue({
-  ...App,
+  ...App
 })
 app.$mount()
