@@ -112,6 +112,19 @@ const PrevPage = () => {
 }
 
 /**
+ * @description: 资源前缀检查
+ * @param {type} path
+ * @return {type}
+ */
+const ResourcePrefixCheck = path => {
+  if (!path.includes('https://') || !path.includes('http://')) {
+    return `${Config.API_BASE_RESOURCE_URL}/${path}`
+  } else {
+    return path
+  }
+}
+
+/**
  * @description: 图片预览
  * @param {type} index
  * @param {type} data
